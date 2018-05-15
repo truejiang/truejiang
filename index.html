@@ -290,7 +290,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cjijava.cn/2018/05/15/javascript/">
+    <link itemprop="mainEntityOfPage" href="http://cjijava.cn/2018/05/15/Eloquent JavaScript Reading Notes - One/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Slash chu">
@@ -309,7 +309,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/05/15/javascript/" itemprop="url">JS编程精解阅读笔记</a></h1>
+                <a class="post-title-link" href="/2018/05/15/Eloquent JavaScript Reading Notes - One/" itemprop="url">JS编程精解阅读笔记 - 函数</a></h1>
         
 
         <div class="post-meta">
@@ -361,7 +361,7 @@
 
           
           
-             <span id="/2018/05/15/javascript/" class="leancloud_visitors" data-flag-title="JS编程精解阅读笔记">
+             <span id="/2018/05/15/Eloquent JavaScript Reading Notes - One/" class="leancloud_visitors" data-flag-title="JS编程精解阅读笔记 - 函数">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -393,21 +393,14 @@
 
       
         
-          
-            <h3 id="剖析函数的定义"><a href="#剖析函数的定义" class="headerlink" title="剖析函数的定义"></a>剖析函数的定义</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function square(x) &#123;</span><br><span class="line">    // do somethings</span><br><span class="line">    return x * x</span><br><span class="line">&#125;</span><br><span class="line">square(12)</span><br><span class="line">--&gt; 144</span><br></pre></td></tr></table></figure>
-<p>关键字 function 用于创建新函数，function 后面如果是变量名（如上面的 square 记得中间有空格），新函数就会使用该变量名保存。<br>变量名后面是一组参数名称，用括号括起来（如上面的 (x) x 是参数可以有多个），最后的 {} 是函数体，在里面写有函数要做的事情。<br>关键字 return 后面是表达式，用于确定函数返回的值，这个是可选的，如果不写，默认返回的是 undefined，当代码遇到 return 语句时，立即跳出但求的函数体 {} 并将返回值传递给调用该函数的代码。</p>
-<p>函数参数的作用类似于变量，可以在函数体内使用，作用域也只限于函数体内，但具体的值是由函数调用者给予，而不是函数自身去传递的。但函数也可以在内部去为这些参数赋予新值。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function person(name, age) &#123;</span><br><span class="line">    var name = &apos;小明&apos;</span><br><span class="line">    return name + &apos;今年&apos; + age + &apos;岁了&apos;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">person(&apos;小红&apos;, 18)</span><br><span class="line">--&gt; 小明今年18岁了</span><br></pre></td></tr></table></figure>
-<p>内部创建了一个变量去接受了参数name的值。但一般不会这么做，没有实际意义，如果要设置默认值的话，可以这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function person(name, age) &#123;</span><br><span class="line">    var name = name || &apos;小明&apos;</span><br><span class="line">    return name + &apos;今年&apos; + age + &apos;岁了&apos;</span><br><span class="line">&#125;</span><br><span class="line">// ES6</span><br><span class="line">function person(name=&quot;小明&quot;, age) &#123;</span><br><span class="line">    return name + &apos;今年&apos; + age + &apos;岁了&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h4 id="定义的顺序"><a href="#定义的顺序" class="headerlink" title="定义的顺序"></a>定义的顺序</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sayHello(&apos;Hello, world!&apos;)</span><br><span class="line"></span><br><span class="line">function sayHello(str)&#123;</span><br><span class="line">    return str</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>上面的代码一样可以运行，是因为计算机在开始执行语句之前，会查找所有的 function 定义，然后保存相关的 function。</p>
-<h4 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h4><p>函数的一个特征是内部创建的变量是函数的局部函数。也就是说，上面的变量 name 在每次函数执行时都会创建一次，函数退出时则不再存在。<br>局部变量只适用于函数的参数和函数内部以 var 关键字定义的变量。如果没有定义同名的局部变量，函数内部则可能访问到全局变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var a = &apos;A&apos;</span><br><span class="line"></span><br><span class="line">function setVarToB() &#123;</span><br><span class="line">    a = &apos;B&apos; </span><br><span class="line">&#125;</span><br><span class="line">setVarToB() //这个时候返回了全局变量。</span><br><span class="line">a</span><br><span class="line">--&gt; &apos;B&apos;</span><br><span class="line"></span><br><span class="line">function setVarToC() &#123;</span><br><span class="line">    var a</span><br><span class="line">    a = &apos;C&apos;</span><br><span class="line">&#125;</span><br><span class="line">setVarToC() //因为内部</span><br><span class="line">a </span><br><span class="line">--&gt;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>提示：上面的函数都没有包含 return 语句，它们之所以被调用是为了实现里面复制的功能，而不是创建值（因为函数内部创建的都是局部函数，退出时消失）。这类函数返回值是 undefined。</p>
-</blockquote>
-
-          
+          <p>Eloquent JavaScript 第二章 函数</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/05/15/Eloquent JavaScript Reading Notes - One/#more" rel="contents">
+              阅读全部 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
