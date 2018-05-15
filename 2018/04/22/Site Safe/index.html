@@ -79,20 +79,18 @@
 
 
 
-<meta name="description" content="一，xss 跨站脚本攻击分类：1，反射型（url 参数直接注入）如： localhost:8080/alert(1)2，存储型（存储到DB后读取时注入）把恶意脚本存储到攻击目标的数据库中，等待猎物点击如：发表一个评论时写的内容是: 哈哈alert(1)用户在读取时就会触发脚本内的alert(1) 注入点：1，HTML节点内容如：JSP或者一些模版语言，或者引入页面时使用了 innerHTML，又或">
+<meta name="description" content="一，xss 跨站脚本攻击分类：1，反射型（url 参数直接注入）如： localhost:8080/&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;2，存储型（存储到DB后读取时注入）把恶意脚本存储到攻击目标的数据库中，等待猎物点击如：发表一个评论时写的内容是: 哈哈&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;用户在读取时就会触发脚本内的 a">
 <meta name="keywords" content="阅读笔记,网站安全">
 <meta property="og:type" content="article">
 <meta property="og:title" content="安全协议的防御方式">
 <meta property="og:url" content="http://cjijava.cn/2018/04/22/Site Safe/index.html">
 <meta property="og:site_name" content="楚江的博客">
-<meta property="og:description" content="一，xss 跨站脚本攻击分类：1，反射型（url 参数直接注入）如： localhost:8080/alert(1)2，存储型（存储到DB后读取时注入）把恶意脚本存储到攻击目标的数据库中，等待猎物点击如：发表一个评论时写的内容是: 哈哈alert(1)用户在读取时就会触发脚本内的alert(1) 注入点：1，HTML节点内容如：JSP或者一些模版语言，或者引入页面时使用了 innerHTML，又或">
+<meta property="og:description" content="一，xss 跨站脚本攻击分类：1，反射型（url 参数直接注入）如： localhost:8080/&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;2，存储型（存储到DB后读取时注入）把恶意脚本存储到攻击目标的数据库中，等待猎物点击如：发表一个评论时写的内容是: 哈哈&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;用户在读取时就会触发脚本内的 a">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://cjijava.cn/2018/04/22/Site%20Safe/1">
-<meta property="og:updated_time" content="2018-05-15T09:52:00.477Z">
+<meta property="og:updated_time" content="2018-05-15T09:58:17.238Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安全协议的防御方式">
-<meta name="twitter:description" content="一，xss 跨站脚本攻击分类：1，反射型（url 参数直接注入）如： localhost:8080/alert(1)2，存储型（存储到DB后读取时注入）把恶意脚本存储到攻击目标的数据库中，等待猎物点击如：发表一个评论时写的内容是: 哈哈alert(1)用户在读取时就会触发脚本内的alert(1) 注入点：1，HTML节点内容如：JSP或者一些模版语言，或者引入页面时使用了 innerHTML，又或">
-<meta name="twitter:image" content="http://cjijava.cn/2018/04/22/Site%20Safe/1">
+<meta name="twitter:description" content="一，xss 跨站脚本攻击分类：1，反射型（url 参数直接注入）如： localhost:8080/&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;2，存储型（存储到DB后读取时注入）把恶意脚本存储到攻击目标的数据库中，等待猎物点击如：发表一个评论时写的内容是: 哈哈&amp;lt;script&amp;gt;alert(1)&amp;lt;/script&amp;gt;用户在读取时就会触发脚本内的 a">
 
 
 
@@ -393,23 +391,22 @@
       
 
       
-        <p>一，xss 跨站脚本攻击<br>分类：<br>1，反射型（url 参数直接注入）<br>如： localhost:8080/<script>alert(1)</script><br>2，存储型（存储到DB后读取时注入）<br>把恶意脚本存储到攻击目标的数据库中，等待猎物点击<br>如：发表一个评论时写的内容是: 哈哈<script>alert(1)</script><br>用户在读取时就会触发脚本内的alert(1)</p>
-<p>注入点：<br>1，HTML节点内容<br>如：JSP或者一些模版语言，或者引入页面时使用了 innerHTML，又或者Vue的v-html等</p>
-<p><div>#{content}</div> contont是 一段脚本时。<br>2，HTML属性（提前终止属性）<br>如：上传了这样的一段代码，<img src="1" onerror="alert(1)"> 和上面一样在img读取不出来的时候就会触发后面onerror里面的脚本<br>3，富文本<br>因为富文本带有HTML，所以和上面2个的一样，HTML带有XSS攻击的风险</p>
+        <h3 id="一，xss-跨站脚本攻击"><a href="#一，xss-跨站脚本攻击" class="headerlink" title="一，xss 跨站脚本攻击"></a>一，xss 跨站脚本攻击</h3><p>分类：<br>1，反射型（url 参数直接注入）<br>如： <code>localhost:8080/&lt;script&gt;alert(1)&lt;/script&gt;</code><br>2，存储型（存储到DB后读取时注入）<br>把恶意脚本存储到攻击目标的数据库中，等待猎物点击<br>如：发表一个评论时写的内容是: <code>哈哈&lt;script&gt;alert(1)&lt;/script&gt;</code><br>用户在读取时就会触发脚本内的 <code>alert(1)</code></p>
+<p>注入点：<br>1，HTML节点内容<br>如：JSP或者一些模版语言，或者引入页面时使用了 innerHTML，又或者Vue的v-html等<br><code>&lt;div&gt;#{content}&lt;/div&gt;</code> <code>contont</code>是 一段脚本时。<br>2，HTML属性（提前终止属性）<br>如：上传了这样的一段代码，<code>&lt;img src=&quot;1&quot; onerror=&quot;alert(1)&quot;&gt;</code> 和上面一样在img读取不出来的时候就会触发后面onerror里面的脚本<br>3，富文本<br>因为富文本带有HTML，所以和上面2个的一样，HTML带有XSS攻击的风险</p>
 <p>XSS防御方法：<br>1，打开浏览器自带防御，只针对反射性XSS<br>在http协议的header中写  header(‘X-XSS-Protection’, 1)</p>
-<p>2，HTML内容的防御<br>用户发表上传的内容，在进入数据前转义<br>&lt;  转义 &lt; &gt; 转成 &gt;  等<br>如： <script><script> 转移成 &lt;script&gt;&lt;/script&gt;</p>
+<p>2，HTML内容的防御<br>用户发表上传的内容，在进入数据前转义<br><code>&lt;</code>  转义 <code>&amp;lt;</code> <code>&gt;</code> 转成 <code>&amp;gt;</code>  等<br>如： <code>&lt;script&gt;&lt;script&gt; 转移成 &amp;lt;script&amp;gt;&amp;lt;/script&amp;gt;</code></p>
 <p>3，HTML属性的防御<br>空格，单引号，双引号转义 转义 “ &quto;</p>
 <p>4，JavaScript的防御<br>转移 “\” 或者转换成json</p>
-<p>5，富文本防御<br>因为js脚本可以藏在很多地方，比如标签，超链接url里或者其他任何属性里<br>如:<script>alert(1)</scirpt><a href="javascript:alert(1)"></a><br>解决办法可以过滤掉<script></script>间的内容，还可以限制只允许一些标签和属性的存入</p>
+<p>5，富文本防御<br>因为js脚本可以藏在很多地方，比如标签，超链接url里或者其他任何属性里<br>如:<code>&lt;script&gt;alert(1)&lt;/scirpt&gt;&lt;a href=&quot;javascript:alert(1)&quot;&gt;&lt;/a&gt;</code><br>解决办法可以过滤掉<script></script>间的内容，还可以限制只允许一些标签和属性的存入</p>
 <p>XSS防御总结：<br>前端尽量不用HTML插入的方式，后端开起浏览器自带防御，存入DB时内置函数转义，设置DOM解析黑白名单，辅助使用一些XSS防御的第三方库等等。</p>
-<p>二，CSRF 跨站请求伪造攻击<br>含义：<br>csrf是让用户在不知情的情况，冒用其身份发起了一个请求<br>点击不知情链接，图片url.src</p>
+<h3 id="二，CSRF-跨站请求伪造攻击"><a href="#二，CSRF-跨站请求伪造攻击" class="headerlink" title="二，CSRF 跨站请求伪造攻击"></a>二，CSRF 跨站请求伪造攻击</h3><p>含义：<br>csrf是让用户在不知情的情况，冒用其身份发起了一个请求<br>点击不知情链接，图片url.src</p>
 <p>原理：<br>1，用户登录了A网站<br>2，A网站确认了用户身份<br>3，B网站页面向A网站请求（带了A网站的身份）</p>
 <p>防御方法：<br>1，减少全站的cookie使用，设置cookie域，禁止其他网站带cookie的请求<br>2，通过 referer（禁止第三方网站的请求），token，验证码等方式，验证用户的表单提交<br>3，对于用户的增删改等操作都使用POST请求<br>4，尽量不要在页面的链接中暴露用户信息<br>5，same-site属性（兼容性不高，只有chrome和oppo支持）<br>参考链接：<br><a href="https://www.ibm.com/developerworks/cn/web/1102_niugang_csrf/" target="_blank" rel="noopener">https://www.ibm.com/developerworks/cn/web/1102_niugang_csrf/</a></p>
 <p>后台防御方法：<br>1，Cookie samesite属性<br>header(‘Set-Cookie: test: 12345; SameSite=Lax’)<br>2，HTTP referer头<br>3，设置token</p>
-<p>三，DOS防御<br>防御方法：<br>1，防火墙<br>2，交换机，路由器<br>3，流量清洗<br>4，高防IP<br>5，避免重复编辑业务<br>6，快速失败快速返回<br>7，防雪崩机制<br>8，有损服务<br>9，CDN</p>
-<p>四，Cookie<br>XSS可以偷取Cookie<br>防御：<br>1，通过设置 http-only 的 Cookie 不会被偷取<br>HTTP/1.1 200 OK<br>Cache-Control: private<br>Content-Type: text/html; charset=utf-8<br>Content-Encoding: gzip<br>Vary: Accept-Encoding<br>Server: Microsoft-IIS/7.0<br>Set-Cookie: ASP.NET_SessionId=ig2fac55; path=/; HttpOnly<br>X-AspNet-Version: 2.0.50727<br>Set-Cookie: user=t=bfabf0b1c1133a822; path=/; HttpOnly<br>X-Powered-By: ASP.NET<br>Date: Tue, 26 Aug 2008 10:51:08 GMT<br>Content-Length: 2838<br>当您使用HttpOnly标记标记Cookie时，它会告知浏览器，该特定Cookie只能由服务器访问。 任何尝试从客户端脚本访问cookie是严格禁止的。 当然，这假设你有：一个现代的网络浏览器。 一个实际上正确实现HttpOnly的浏览器。<br>2，设置 same-stie 组织第三方使用Cookies</p>
-<p>五，点击劫持和传输安全</p>
-<p>点击劫持防御方法：<br>1，Javascript 禁止内嵌<br>通过 top === Window 是否为true对比。带frame的页面为false<br>2，H5属性禁止运行内嵌<br>sandbox=”allow-forms”<br>3，后台设置禁止内容<br>header(‘X-FRAME-OPTIONS’, ‘DENY’)<br>4，加验证码</p>
+<h3 id="三，DOS防御"><a href="#三，DOS防御" class="headerlink" title="三，DOS防御"></a>三，DOS防御</h3><p>防御方法：<br>1，防火墙<br>2，交换机，路由器<br>3，流量清洗<br>4，高防IP<br>5，避免重复编辑业务<br>6，快速失败快速返回<br>7，防雪崩机制<br>8，有损服务<br>9，CDN</p>
+<h3 id="四，Cookie"><a href="#四，Cookie" class="headerlink" title="四，Cookie"></a>四，Cookie</h3><p>XSS可以偷取Cookie<br>防御：<br>1，通过设置 http-only 的 Cookie 不会被偷取<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Cache-Control: private</span><br><span class="line">Content-Type: text/html; charset=utf-8</span><br><span class="line">Content-Encoding: gzip</span><br><span class="line">Vary: Accept-Encoding</span><br><span class="line">Server: Microsoft-IIS/7.0</span><br><span class="line">Set-Cookie: ASP.NET_SessionId=ig2fac55; path=/; HttpOnly</span><br><span class="line">X-AspNet-Version: 2.0.50727</span><br><span class="line">Set-Cookie: user=t=bfabf0b1c1133a822; path=/; HttpOnly</span><br><span class="line">X-Powered-By: ASP.NET</span><br><span class="line">Date: Tue, 26 Aug 2008 10:51:08 GMT</span><br><span class="line">Content-Length: 2838</span><br></pre></td></tr></table></figure></p>
+<p>当您使用HttpOnly标记标记Cookie时，它会告知浏览器，该特定Cookie只能由服务器访问。 任何尝试从客户端脚本访问cookie是严格禁止的。 当然，这假设你有：一个现代的网络浏览器。 一个实际上正确实现HttpOnly的浏览器。<br>2，设置 same-stie 组织第三方使用Cookies</p>
+<h3 id="五，点击劫持和传输安全"><a href="#五，点击劫持和传输安全" class="headerlink" title="五，点击劫持和传输安全"></a>五，点击劫持和传输安全</h3><p>点击劫持防御方法：<br>1，<code>Javascript</code> 禁止内嵌<br>通过 <code>top === Window</code> 是否为true对比。带frame的页面为false<br>2，H5属性禁止运行内嵌<br>sandbox=”allow-forms”<br>3，后台设置禁止内容<br>header(‘X-FRAME-OPTIONS’, ‘DENY’)<br>4，加验证码</p>
 <p>HTTP验证的，看的不是很明白，参考下面的页面<br><a href="https://blog.csdn.net/qq_33936481/article/details/77604344" target="_blank" rel="noopener">https://blog.csdn.net/qq_33936481/article/details/77604344</a></p>
 <p>六，密码管理</p>
 <p>解决方法：<br>1，密码加密（哈希算法）<br>有md5 sha1 sha256 等</p>
@@ -513,8 +510,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -588,6 +594,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一，xss-跨站脚本攻击"><span class="nav-number">1.</span> <span class="nav-text">一，xss 跨站脚本攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二，CSRF-跨站请求伪造攻击"><span class="nav-number">2.</span> <span class="nav-text">二，CSRF 跨站请求伪造攻击</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三，DOS防御"><span class="nav-number">3.</span> <span class="nav-text">三，DOS防御</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四，Cookie"><span class="nav-number">4.</span> <span class="nav-text">四，Cookie</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五，点击劫持和传输安全"><span class="nav-number">5.</span> <span class="nav-text">五，点击劫持和传输安全</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
