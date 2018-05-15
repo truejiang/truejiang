@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="阅读笔记,JavaScript,ES6," />
 
 
 
@@ -79,16 +79,18 @@
 
 
 
-<meta name="description" content="吹灭读书灯 满身都是月">
-<meta property="og:type" content="website">
-<meta property="og:title" content="楚江的博客">
-<meta property="og:url" content="http://cjijava.cn/tags/阅读笔记/index.html">
+<meta name="description" content="1. 概述Reflect对象与Proxy对象一样，也是 ES6 为了操作对象而提供的新 API。 Reflect.get(target, name, receiver)Reflect.get方法查找并返回target对象的name属性，如果没有该属性，则返回undefined。 1234567891011let myObject = &amp;#123;    foo: 1,    bar: 2,">
+<meta name="keywords" content="阅读笔记,JavaScript,ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ES6入门阅读笔记 - Reflect - 操作对象">
+<meta property="og:url" content="http://cjijava.cn/2018/01/28/ES6 Reading Notes - Reflect/index.html">
 <meta property="og:site_name" content="楚江的博客">
-<meta property="og:description" content="吹灭读书灯 满身都是月">
+<meta property="og:description" content="1. 概述Reflect对象与Proxy对象一样，也是 ES6 为了操作对象而提供的新 API。 Reflect.get(target, name, receiver)Reflect.get方法查找并返回target对象的name属性，如果没有该属性，则返回undefined。 1234567891011let myObject = &amp;#123;    foo: 1,    bar: 2,">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-15T09:46:22.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="楚江的博客">
-<meta name="twitter:description" content="吹灭读书灯 满身都是月">
+<meta name="twitter:title" content="ES6入门阅读笔记 - Reflect - 操作对象">
+<meta name="twitter:description" content="1. 概述Reflect对象与Proxy对象一样，也是 ES6 为了操作对象而提供的新 API。 Reflect.get(target, name, receiver)Reflect.get方法查找并返回target对象的name属性，如果没有该属性，则返回undefined。 1234567891011let myObject = &amp;#123;    foo: 1,    bar: 2,">
 
 
 
@@ -118,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://cjijava.cn/tags/阅读笔记/"/>
+  <link rel="canonical" href="http://cjijava.cn/2018/01/28/ES6 Reading Notes - Reflect/"/>
 
 
 
 
 
-  <title>Tag: 阅读笔记 | 楚江的博客</title>
+  <title>ES6入门阅读笔记 - Reflect - 操作对象 | 楚江的博客</title>
   
 
 
@@ -143,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -275,310 +277,197 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>阅读笔记<small>Tag</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cjijava.cn/2018/01/28/ES6 Reading Notes - Reflect/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Slash chu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oru3ml3h3.bkt.clouddn.com/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="楚江的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/04/22/Site Safe/" itemprop="url">
-              
-                <span itemprop="name">安全协议的防御方式</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">ES6入门阅读笔记 - Reflect - 操作对象</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-04-22T10:50:00+08:00"
-              content="2018-04-22" >
-          04-22
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-01-28T10:50:00+08:00">
+                2018-01-28
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/01/28/ES6 Reading Notes - Reflect/" class="leancloud_visitors" data-flag-title="ES6入门阅读笔记 - Reflect - 操作对象">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Visitors&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/02/15/Eloquent JavaScript Reading Notes - One/" itemprop="url">
-              
-                <span itemprop="name">JS编程精解阅读笔记 - 函数</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-02-15T10:50:00+08:00"
-              content="2018-02-15" >
-          02-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/30/ES6 Reading Notes - Generator/" itemprop="url">
-              
-                <span itemprop="name">ES6入门阅读笔记 - Generator 函数 - 又一种异步操作</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-30T10:50:00+08:00"
-              content="2018-01-30" >
-          01-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/29/ES6 Reading Notes - Promise/" itemprop="url">
-              
-                <span itemprop="name">ES6入门阅读笔记 - Promise 对象 - 异步操作</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-29T10:50:00+08:00"
-              content="2018-01-29" >
-          01-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/28/ES6 Reading Notes - Reflect/" itemprop="url">
-              
-                <span itemprop="name">ES6入门阅读笔记 - Reflect - 操作对象</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-28T10:50:00+08:00"
-              content="2018-01-28" >
-          01-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/27/ES6 Reading Notes - SetMap/" itemprop="url">
-              
-                <span itemprop="name">ES6入门阅读笔记 - Set和Map数据结构</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-27T14:20:00+08:00"
-              content="2018-01-27" >
-          01-27
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/26/ES6 Reading Notes - Object/" itemprop="url">
-              
-                <span itemprop="name">ES6入门阅读笔记 - 对象的扩展</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-26T14:20:00+08:00"
-              content="2018-01-26" >
-          01-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/26/ES6 Reading Note - Proxy/" itemprop="url">
-              
-                <span itemprop="name">ES6入门阅读笔记 - Proxy 代理器</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-26T14:20:00+08:00"
-              content="2018-01-26" >
-          01-26
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/24/ES6 Reading Notes - String/" itemprop="url">
-              
-                <span itemprop="name">ES6入门阅读笔记 - 字符串的扩展</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-24T10:50:00+08:00"
-              content="2018-01-24" >
-          01-24
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/23/ES6 Reading Notes - Array/" itemprop="url">
-              
-                <span itemprop="name">ES6入门阅读笔记 - 数组的扩展</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-23T10:50:00+08:00"
-              content="2018-01-23" >
-          01-23
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h3 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h3><p>Reflect对象与Proxy对象一样，也是 ES6 为了操作对象而提供的新 API。</p>
+<h4 id="Reflect-get-target-name-receiver"><a href="#Reflect-get-target-name-receiver" class="headerlink" title="Reflect.get(target, name, receiver)"></a>Reflect.get(target, name, receiver)</h4><p>Reflect.get方法查找并返回target对象的name属性，如果没有该属性，则返回undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">let myObject = &#123;</span><br><span class="line">    foo: 1,</span><br><span class="line">    bar: 2,</span><br><span class="line">    get baz() &#123;</span><br><span class="line">        return this.foo + this.bar</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Reflect.get(myObject, &apos;foo&apos;) //1</span><br><span class="line">Reflect.get(myObject, &apos;bar&apos;) //2</span><br><span class="line">Reflect.get(myObject, &apos;baz&apos;) //3</span><br></pre></td></tr></table></figure>
+<h4 id="Reflect-set-target-name-value-receiver"><a href="#Reflect-set-target-name-value-receiver" class="headerlink" title="Reflect.set(target, name, value, receiver)"></a>Reflect.set(target, name, value, receiver)</h4><p>Reflect.set方法设置target对象的name属性等于value。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">let myObject = &#123;</span><br><span class="line">    foo: 1,</span><br><span class="line">    set bar(value) &#123;</span><br><span class="line">        return this.foo = value</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(myObject.foo) // 1</span><br><span class="line"></span><br><span class="line">Reflect.set(myObject, &apos;foo&apos;, 2)</span><br><span class="line">console.log(myObject.foo) // 2</span><br><span class="line"></span><br><span class="line">Reflect.set(myObject, &apos;foo&apos;, 3)</span><br><span class="line">console.log(myObject.foo) // 3</span><br></pre></td></tr></table></figure>
+<h4 id="Reflect-has-obj-name"><a href="#Reflect-has-obj-name" class="headerlink" title="Reflect.has(obj, name)"></a>Reflect.has(obj, name)</h4><p>Reflect.has方法对应name in obj里面的in运算符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let myObject = &#123;</span><br><span class="line">    foo: 1</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 旧写法</span><br><span class="line">console.log(&apos;foo&apos; in myObject) // true</span><br><span class="line"></span><br><span class="line">// 新写法</span><br><span class="line">console.log(Reflect.has(myObject, &apos;foo&apos;)) // true</span><br></pre></td></tr></table></figure>
+<h4 id="Reflect-deleteProperty-obj-name"><a href="#Reflect-deleteProperty-obj-name" class="headerlink" title="Reflect.deleteProperty(obj, name)"></a>Reflect.deleteProperty(obj, name)</h4><p>Reflect.deleteProperty方法等同于delete obj[name]，用于删除对象的属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const myObj = &#123;foo: &apos;bar&apos;&#125;</span><br><span class="line"></span><br><span class="line">// 旧写法</span><br><span class="line">delete myObj.foo</span><br><span class="line"></span><br><span class="line">// 新写法</span><br><span class="line">Reflect.deleteProperty(myObj, &apos;foo&apos;)</span><br></pre></td></tr></table></figure>
+<p>该方法返回一个布尔值。如果删除成功，或者被删除的属性不存在，返回true；删除失败，被删除的属性依然存在，返回false。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/阅读笔记/" rel="tag"># 阅读笔记</a>
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/01/27/ES6 Reading Notes - SetMap/" rel="next" title="ES6入门阅读笔记 - Set和Map数据结构">
+                <i class="fa fa-chevron-left"></i> ES6入门阅读笔记 - Set和Map数据结构
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/01/29/ES6 Reading Notes - Promise/" rel="prev" title="ES6入门阅读笔记 - Promise 对象 - 异步操作">
+                ES6入门阅读笔记 - Promise 对象 - 异步操作 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/tags/阅读笔记/page/2/">2</a><a class="extend next" rel="next" href="/tags/阅读笔记/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -586,6 +475,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjUwMy8xMzAzOA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -606,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -681,6 +588,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-概述"><span class="nav-number">1.</span> <span class="nav-text">1. 概述</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Reflect-get-target-name-receiver"><span class="nav-number">1.1.</span> <span class="nav-text">Reflect.get(target, name, receiver)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reflect-set-target-name-value-receiver"><span class="nav-number">1.2.</span> <span class="nav-text">Reflect.set(target, name, value, receiver)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reflect-has-obj-name"><span class="nav-number">1.3.</span> <span class="nav-text">Reflect.has(obj, name)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Reflect-deleteProperty-obj-name"><span class="nav-number">1.4.</span> <span class="nav-text">Reflect.deleteProperty(obj, name)</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -827,6 +750,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -855,6 +782,17 @@
 
 
 
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
   
 
 
