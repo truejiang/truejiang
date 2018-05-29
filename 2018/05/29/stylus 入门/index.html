@@ -1,0 +1,1305 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="baidu-site-verification" content="KgxXfpSwpc" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="css预处理器,stylus," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="简介Stylus，2010年产生，相对于 LESS 和 SASS 出来的时间比较晚，来自Node.js社区，主要用来给 Node 项目进行CSS预处理支持，但现在Node普及的情况下，而且还支持 JavaScript 的写法。 先说下 stylus 的一些优点  stylus的代码很简介，{} 甚至 : 都可以省略点，缩进的写法让层级看着非常直观。 @import 可以引用其他 样式文件，使样式也">
+<meta name="keywords" content="css预处理器,stylus">
+<meta property="og:type" content="article">
+<meta property="og:title" content="stylus - 入门">
+<meta property="og:url" content="http://cjijava.cn/2018/05/29/stylus 入门/index.html">
+<meta property="og:site_name" content="楚江的博客">
+<meta property="og:description" content="简介Stylus，2010年产生，相对于 LESS 和 SASS 出来的时间比较晚，来自Node.js社区，主要用来给 Node 项目进行CSS预处理支持，但现在Node普及的情况下，而且还支持 JavaScript 的写法。 先说下 stylus 的一些优点  stylus的代码很简介，{} 甚至 : 都可以省略点，缩进的写法让层级看着非常直观。 @import 可以引用其他 样式文件，使样式也">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-29T08:52:03.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="stylus - 入门">
+<meta name="twitter:description" content="简介Stylus，2010年产生，相对于 LESS 和 SASS 出来的时间比较晚，来自Node.js社区，主要用来给 Node 项目进行CSS预处理支持，但现在Node普及的情况下，而且还支持 JavaScript 的写法。 先说下 stylus 的一些优点  stylus的代码很简介，{} 甚至 : 都可以省略点，缩进的写法让层级看着非常直观。 @import 可以引用其他 样式文件，使样式也">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://cjijava.cn/2018/05/29/stylus 入门/"/>
+
+
+
+
+
+  <title>stylus - 入门 | 楚江的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">楚江的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description"></h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-目录">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            目录
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            站内搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索中..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://cjijava.cn/2018/05/29/stylus 入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Slash chu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://oru3ml3h3.bkt.clouddn.com/photo.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="楚江的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">stylus - 入门</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">创建于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-29T10:50:00+08:00">
+                2018-05-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/stylus/" itemprop="url" rel="index">
+                    <span itemprop="name">stylus</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2018/05/29/stylus 入门/" class="leancloud_visitors" data-flag-title="stylus - 入门">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读人数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Stylus，2010年产生，相对于 LESS 和 SASS 出来的时间比较晚，来自Node.js社区，主要用来给 Node 项目进行CSS预处理支持，但现在Node普及的情况下，而且还支持 JavaScript 的写法。</p>
+<p>先说下 stylus 的一些优点</p>
+<ul>
+<li>stylus的代码很简介，{} 甚至 : 都可以省略点，缩进的写法让层级看着非常直观。</li>
+<li>@import 可以引用其他 样式文件，使样式也可以模块化，方便维护。</li>
+<li>函数和Mixin，魔法师一般的利器，复用代码，条件判断，样样都行。</li>
+<li>运行环境相对简单，有Node即可，sass需要安装 ruby</li>
+</ul>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><p>使用非常简单，首先确定你的系统中有安装 (Node)[‘<a href="http://nodejs.cn/&#39;]，如果没有请点击前面的链接安装。npm" target="_blank" rel="noopener">http://nodejs.cn/&#39;]，如果没有请点击前面的链接安装。npm</a> 和 Node 是一起打包安装的。<br>然后打开任意文件夹，新建一个目录 stylus，进入该目录，安装 stylus</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install stylus --save</span><br></pre></td></tr></table></figure>
+<p>另外新建一个 stylus 文件，文件的后缀是 .styl。所以我们就叫 <code>stylus.styl</code> 吧。</p>
+<p>另外新建一个 js 文件叫 <code>stylus_run.js</code>，然后代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">const css = require(&apos;stylus&apos;)</span><br><span class="line">      str = require(&apos;fs&apos;).readFileSync(&apos;stylus.styl&apos;, &apos;utf-8&apos;)</span><br><span class="line"></span><br><span class="line">css.render(str, &#123; filename: &apos;index.styl&apos;&#125;, function(err, css) &#123;</span><br><span class="line">    if (err) throw err</span><br><span class="line">    var http = require(&apos;http&apos;)</span><br><span class="line">    http.createServer(function(req, res)&#123;</span><br><span class="line">        res.writeHead(200, &#123;&apos;Content-Type&apos; : &apos;text/css&apos;&#125;)</span><br><span class="line">        res.end(css)</span><br><span class="line">    &#125;).listen(1337, &apos;127.0.0.1&apos;)</span><br><span class="line">    console.log(&apos;success&apos;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上面的代码是引用的 张鑫旭大神的，自己懒的去搭了，代码很简单，就是请求 stylus 包，读取我们的 stylus文件，然后渲染。最后吧渲染后的内容，挂到 <code>http://127.0.0.1:1337/</code> 上。</p>
+<p>然后我们回到刚刚的 stylus.styl 文件，先随便玩玩吧，输入一些代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">font-size-14px = 14px</span><br><span class="line"></span><br><span class="line">font = font-size-14px &apos;微软雅黑&apos;, Arial</span><br><span class="line"></span><br><span class="line">pad(n)</span><br><span class="line">    margin (- n)</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">    pad(10px)</span><br></pre></td></tr></table></figure>
+<p>在命令行输入 <code>node stylus_run</code>，然后在浏览器输入 <code>http://127.0.0.1:1337/</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">  margin: -10px;</span><br><span class="line">  padding: 25px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>就是这么神奇，就像写 JS 一样。下面我们看下各个用法。</p>
+<h4 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h4><p>常规的写法,我们可以用缩进和空格代替{} 和 : </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">body</span><br><span class="line">    color #fff</span><br></pre></td></tr></table></figure>
+<p>等于CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    color: #fff</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>多个选择器，可以用 , 或者回车:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">.p1, .p2</span><br><span class="line">    color #333</span><br><span class="line">// 或者</span><br><span class="line">.p1</span><br><span class="line">.p2</span><br><span class="line">    color #333</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意上面的代码.p1和.p2新行不要缩进，否则就成了 .p1下的.p2了。</p>
+</blockquote>
+<p>父级引用，类似于 sass：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">div</span><br><span class="line">    color #333</span><br><span class="line">    &amp;.div1</span><br><span class="line">        color #f00</span><br></pre></td></tr></table></figure></p>
+<p>等于CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    color #333</span><br><span class="line">&#125;</span><br><span class="line">div .div1 &#123;</span><br><span class="line">    color #f00</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>总的来说和CSS本身的选择器基本一致，多了一些比如 父级引用 等。</p>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>变量是 stylus 一个很强大的功能。可以指定表达式为变量，方便于复用，比如我们一般在项目中，会有很多通用的字体大小，字体颜色，背景色等。我们可以统一写了如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">// 颜色定义规范</span><br><span class="line">$color-background-nav = #222</span><br><span class="line">$color-background-d = rgba(0, 0, 0, 0.3)</span><br><span class="line">$color-highlight-background = #333</span><br><span class="line">$color-dialog-background = #666</span><br><span class="line">$color-theme = #ffcd32</span><br><span class="line">$color-theme-d = rgba(255, 205, 49, 0.5)</span><br><span class="line">$color-sub-theme = #d93f30</span><br><span class="line">$color-text = #fff</span><br><span class="line">$color-text-d = rgba(255, 255, 255, 0.3)</span><br><span class="line">$color-text-l = rgba(255, 255, 255, 0.5)</span><br><span class="line">$color-text-ll = rgba(255, 255, 255, 0.8)</span><br><span class="line"></span><br><span class="line">// 字体定义规范</span><br><span class="line">$font-size-small-s = 10px</span><br><span class="line">$font-size-small = 12px</span><br><span class="line">$font-size-medium = 14px</span><br><span class="line">$font-size-medium-x = 16px</span><br><span class="line">$font-size-large = 18px</span><br><span class="line">$font-size-large-x = 22px</span><br><span class="line"></span><br><span class="line">// 使用的话就是</span><br><span class="line"></span><br><span class="line">.nav</span><br><span class="line">    font-size $font-size-small-s</span><br><span class="line">    background-color $color-background-nav</span><br></pre></td></tr></table></figure>
+<p>上面这样写很一目了然，比如我知道这个是给nav的背景色，给小号的字体</p>
+<p>属性查找：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">#logo</span><br><span class="line">  position: absolute</span><br><span class="line">  top: 50%</span><br><span class="line">  left: 50%</span><br><span class="line">  width: w = 150px</span><br><span class="line">  height: h = 80px</span><br><span class="line">  margin-left: -(w / 2)</span><br><span class="line">  margin-top: -(h / 2)</span><br><span class="line">// 也可以这么写</span><br><span class="line"></span><br><span class="line">#logo</span><br><span class="line">  position: absolute</span><br><span class="line">  top: 50%</span><br><span class="line">  left: 50%</span><br><span class="line">  width: 150px</span><br><span class="line">  height: 80px</span><br><span class="line">  margin-left: -(@width / 2)</span><br><span class="line">  margin-top: -(@height / 2)</span><br></pre></td></tr></table></figure>
+<p>相当于是一个局部的变量。</p>
+<h4 id="插值"><a href="#插值" class="headerlink" title="插值"></a>插值</h4><p>Stylus 支持通过使用 {} 字段包围表达式来插入值。类似于ES6的字符串拼接<code>${variables}</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">addColorClass(className, colors)</span><br><span class="line">    &amp;.&#123;className&#125;</span><br><span class="line">        color colors</span><br><span class="line"></span><br><span class="line">div</span><br><span class="line">  addColorClass(yellowColor, yellow)</span><br></pre></td></tr></table></figure>
+<p>等同于：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">div.yellowColor &#123;</span><br><span class="line">  color: #ff0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>运算符的优先等级如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">[]</span><br><span class="line">! ~ + -</span><br><span class="line">is defined</span><br><span class="line">** * / %</span><br><span class="line">+ -</span><br><span class="line">... ..</span><br><span class="line">&lt;= &gt;= &lt; &gt;</span><br><span class="line">in</span><br><span class="line">== is != is not isnt</span><br><span class="line">is a</span><br><span class="line">&amp;&amp; and || or</span><br><span class="line">?:</span><br><span class="line">= := ?= += -= *= /= %=</span><br><span class="line">not</span><br><span class="line">if unless</span><br></pre></td></tr></table></figure></p>
+<p>算术运算符是支持 带单位的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">15px - 5px // 10px </span><br><span class="line">15px * 5px // 75px</span><br></pre></td></tr></table></figure>
+<p>也支持三元操作符：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">color = color is defined ? color : white</span><br><span class="line"></span><br><span class="line">// stylus 没有 == 和 === 用 is 判断是否相等</span><br></pre></td></tr></table></figure></p>
+<h4 id="混合书写"><a href="#混合书写" class="headerlink" title="混合书写"></a>混合书写</h4><p>混入的写法和定义函数方法一致。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">border-nPx (n)</span><br><span class="line">  border-width n</span><br><span class="line"></span><br><span class="line">.box</span><br><span class="line">  border-nPx (10px)</span><br><span class="line">  //或者省略大括号</span><br><span class="line">  border-nPx 10px</span><br></pre></td></tr></table></figure>
+<p>等于CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">  border-width:10px    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>我们还可以传入所有的 参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">addBorder()</span><br><span class="line">    border arguments</span><br><span class="line">.box</span><br><span class="line">    addBorder 1px solid pink</span><br></pre></td></tr></table></figure>
+<p>等于CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.box&#123;</span><br><span class="line">    border: 1px solid pink</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>也可以设置默认参数：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">addBlock(w = 100px, h = 100px, bgColor = #fff)</span><br><span class="line">    width w</span><br><span class="line">    height h</span><br><span class="line">    background-color bgColor</span><br><span class="line">.firstBlock</span><br><span class="line">    addBlock()</span><br><span class="line">.secondBlock</span><br><span class="line">    addBlock(200px, 200px, #F00)</span><br></pre></td></tr></table></figure></p>
+<p>等于CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.firstBlock &#123;</span><br><span class="line">  width: 100px;</span><br><span class="line">  height: 100px;</span><br><span class="line">  background-color: #fff;</span><br><span class="line">&#125;</span><br><span class="line">.secondBlock &#123;</span><br><span class="line">  width: 200px;</span><br><span class="line">  height: 200px;</span><br><span class="line">  background-color: #f00;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h4><p>和混合差不多，但是可以返回值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">add(a, b)</span><br><span class="line">    a + b</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">    padding add(10px, 5)</span><br></pre></td></tr></table></figure>
+<p>等于CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">body &#123;</span><br><span class="line">    padding: 15px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>方法也支持参数默认值和判断：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">stripe(even = #fff, odd = #eee, paddingOrMargin = true)</span><br><span class="line">  tr</span><br><span class="line">    background-color: odd</span><br><span class="line">    &amp;.even</span><br><span class="line">    &amp;.nth-child(even)</span><br><span class="line">      background-color: even</span><br><span class="line">    if paddingOrMargin</span><br><span class="line">      padding: 4px 4px</span><br><span class="line">    else </span><br><span class="line">      margin: 4px 4px</span><br><span class="line">table</span><br><span class="line">  stripe(#f00, #f32, false)</span><br></pre></td></tr></table></figure>
+<p>等于CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">table tr &#123;</span><br><span class="line">  background-color: #f32;</span><br><span class="line">  margin: 4px 4px;</span><br><span class="line">&#125;</span><br><span class="line">table tr.even,</span><br><span class="line">table tr.nth-child(even) &#123;</span><br><span class="line">  background-color: #f00;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h4><p>Stylus 支持3种注释，单行，多行，多行缓冲</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 我是单行注释!</span><br><span class="line">body</span><br><span class="line">  padding 5px // 蛋疼的padding</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line"> * 我是多行注释</span><br><span class="line"> * 给定数值合体</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">add(a, b)</span><br><span class="line">  a + b</span><br><span class="line"></span><br><span class="line">/*!</span><br><span class="line"> * 我是多行缓冲注释，和多行注释类似，但是在压缩时会忽略这段注释</span><br><span class="line"> * 给定数值合体</span><br><span class="line"> */</span><br><span class="line"></span><br><span class="line">add(a, b)</span><br><span class="line">  a + b</span><br></pre></td></tr></table></figure>
+<h4 id="迭代"><a href="#迭代" class="headerlink" title="迭代"></a>迭代</h4><p>Stylus 也支持迭代，语法如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">for &lt;val-name&gt; [, &lt;key-name&gt;] in &lt;expression&gt;</span><br></pre></td></tr></table></figure></p>
+<p>实际使用如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">addColor(props)</span><br><span class="line">  props = arguments if length(arguments) &gt; 1</span><br><span class="line">  for prop in props</span><br><span class="line">    div.&#123;prop[0]&#125;</span><br><span class="line">      color: prop[1]</span><br><span class="line"></span><br><span class="line">body</span><br><span class="line">  list = (blueColor blue) (redColor #f00) (blackColor #333)</span><br><span class="line">  addColor(list)</span><br></pre></td></tr></table></figure>
+<p>等于CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">body div.blueColor &#123;</span><br><span class="line">  color: #00f;</span><br><span class="line">&#125;</span><br><span class="line">body div.redColor &#123;</span><br><span class="line">  color: #f00;</span><br><span class="line">&#125;</span><br><span class="line">body div.blackColor &#123;</span><br><span class="line">  color: #333;</span><br><span class="line">&#125;</span><br><span class="line">body div.grayColor &#123;</span><br><span class="line">  color: #666;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>是不是超爽的，省了很多代码。</p>
+<h4 id="导入（-import）"><a href="#导入（-import）" class="headerlink" title="导入（@import）"></a>导入（@import）</h4><p>这也是Stylus 常用的功能，可以导入CSS，也可以导入stylus文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@import &apos;reset.css&apos;</span><br></pre></td></tr></table></figure>
+<p>比如我们项目中常用结构会这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/stylus</span><br><span class="line"> |--index.styl</span><br><span class="line"> |--icon.styl</span><br><span class="line"> |--mixin.styl</span><br><span class="line"> |--reset.styl</span><br><span class="line"> |--variable.styl</span><br></pre></td></tr></table></figure>
+<p>一般在 index.styl 中导入所有基础的 styl，在外部引用时直接引入 index.styl，index.style代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;./reset.styl&quot;</span><br><span class="line">@import &quot;./icon.styl&quot;</span><br></pre></td></tr></table></figure>
+<h4 id="媒体（-media）"><a href="#媒体（-media）" class="headerlink" title="媒体（@media）"></a>媒体（@media）</h4><p>和CSS一致<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@media print</span><br><span class="line">  #header</span><br><span class="line">  #footer</span><br><span class="line">    display none</span><br></pre></td></tr></table></figure></p>
+<p>等于CSS：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@media print &#123;</span><br><span class="line">  #header,</span><br><span class="line">  #footer &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这里有个小技巧，比如我们平时手机页面会根据物理像素去给不同大小的图片，可以代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bg-image($url)</span><br><span class="line">  background-image: url($url + &quot;@2x.png&quot;)</span><br><span class="line">  @media (-webkit-min-device-pixel-ratio: 3),(min-device-pixel-ratio: 3)</span><br><span class="line">    background-image: url($url + &quot;@3x.png&quot;)</span><br></pre></td></tr></table></figure></p>
+<p>注意上面代码图片的实际路径。一些常用的用法就是上面这些了。以后深入学习和使用后再更新，拜~</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/css预处理器/" rel="tag"># css预处理器</a>
+          
+            <a href="/tags/stylus/" rel="tag"># stylus</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/12/webpack配置/" rel="next" title="webpack 常用配置（不定期更新）">
+                <i class="fa fa-chevron-left"></i> webpack 常用配置（不定期更新）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNjUwMy8xMzAzOA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            目录结构
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            全部
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://oru3ml3h3.bkt.clouddn.com/photo.jpg"
+                alt="Slash chu" />
+            
+              <p class="site-author-name" itemprop="name">Slash chu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/truejiang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#简介"><span class="nav-number">1.</span> <span class="nav-text">简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用"><span class="nav-number">2.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置环境"><span class="nav-number">2.1.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#选择器"><span class="nav-number">2.2.</span> <span class="nav-text">选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">2.3.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#插值"><span class="nav-number">2.4.</span> <span class="nav-text">插值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运算符"><span class="nav-number">2.5.</span> <span class="nav-text">运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#混合书写"><span class="nav-number">2.6.</span> <span class="nav-text">混合书写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#方法"><span class="nav-number">2.7.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注释"><span class="nav-number">2.8.</span> <span class="nav-text">注释</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#迭代"><span class="nav-number">2.9.</span> <span class="nav-text">迭代</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#导入（-import）"><span class="nav-number">2.10.</span> <span class="nav-text">导入（@import）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#媒体（-media）"><span class="nav-number">2.11.</span> <span class="nav-text">媒体（@media）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2017 &mdash; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">楚江</span>
+  <span>友情链接</span><a href="https://yangxinjian.github.io/">小猪的博客</a>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_lines.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("VokTPAYKtfVVwS16UYp9KbX0-gzGzoHsz", "CNoxhGrSHk9tCIinMLHJpeM0");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
