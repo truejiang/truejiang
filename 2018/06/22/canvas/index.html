@@ -80,19 +80,19 @@
 
 
 
-<meta name="description" content="这两天看了JavaScript 高级程序设计（第 3 版）的第 15 章，学习了如何使用 canvas，为了巩固知识，写了一个可以世界时钟墙。下面我们一步步用 OOP 的设计方式，来写完这个程序吧。下面先看下演示的效果  前置知识首先我们需要用的是 HTML5 的新功能元素。可以通过 JavaScript 动态的在这个元素区域绘制图形。使用这个元素必须先设置它的 width 和 height 属性">
+<meta name="description" content="这两天看了JavaScript 高级程序设计（第 3 版）的第 15 章，学习了如何使用 canvas，为了巩固知识，写了一个可以世界时钟墙。下面我们一步步用 OOP 的设计方式，来写完这个程序吧。下面先看下演示的效果  前置知识首先我们需要用的是 HTML5 的新功能 &amp;lt;canvas&amp;gt;元素。可以通过 JavaScript 动态的在这个元素区域绘制图形。使用这个元素必须先设置它的 wi">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用canvas画一个动态的时钟">
 <meta property="og:url" content="http://cjijava.cn/2018/06/22/canvas/index.html">
 <meta property="og:site_name" content="楚江的博客">
-<meta property="og:description" content="这两天看了JavaScript 高级程序设计（第 3 版）的第 15 章，学习了如何使用 canvas，为了巩固知识，写了一个可以世界时钟墙。下面我们一步步用 OOP 的设计方式，来写完这个程序吧。下面先看下演示的效果  前置知识首先我们需要用的是 HTML5 的新功能元素。可以通过 JavaScript 动态的在这个元素区域绘制图形。使用这个元素必须先设置它的 width 和 height 属性">
+<meta property="og:description" content="这两天看了JavaScript 高级程序设计（第 3 版）的第 15 章，学习了如何使用 canvas，为了巩固知识，写了一个可以世界时钟墙。下面我们一步步用 OOP 的设计方式，来写完这个程序吧。下面先看下演示的效果  前置知识首先我们需要用的是 HTML5 的新功能 &amp;lt;canvas&amp;gt;元素。可以通过 JavaScript 动态的在这个元素区域绘制图形。使用这个元素必须先设置它的 wi">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://oru3ml3h3.bkt.clouddn.com/%E4%B8%96%E7%95%8C%E6%97%B6%E9%92%9F.gif">
-<meta property="og:updated_time" content="2018-06-22T08:20:12.135Z">
+<meta property="og:updated_time" content="2018-06-22T08:27:21.248Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用canvas画一个动态的时钟">
-<meta name="twitter:description" content="这两天看了JavaScript 高级程序设计（第 3 版）的第 15 章，学习了如何使用 canvas，为了巩固知识，写了一个可以世界时钟墙。下面我们一步步用 OOP 的设计方式，来写完这个程序吧。下面先看下演示的效果  前置知识首先我们需要用的是 HTML5 的新功能元素。可以通过 JavaScript 动态的在这个元素区域绘制图形。使用这个元素必须先设置它的 width 和 height 属性">
+<meta name="twitter:description" content="这两天看了JavaScript 高级程序设计（第 3 版）的第 15 章，学习了如何使用 canvas，为了巩固知识，写了一个可以世界时钟墙。下面我们一步步用 OOP 的设计方式，来写完这个程序吧。下面先看下演示的效果  前置知识首先我们需要用的是 HTML5 的新功能 &amp;lt;canvas&amp;gt;元素。可以通过 JavaScript 动态的在这个元素区域绘制图形。使用这个元素必须先设置它的 wi">
 <meta name="twitter:image" content="http://oru3ml3h3.bkt.clouddn.com/%E4%B8%96%E7%95%8C%E6%97%B6%E9%92%9F.gif">
 
 
@@ -392,9 +392,9 @@
       
         <p>这两天看了<a href="https://book.douban.com/subject/10546125/" target="_blank" rel="noopener">JavaScript 高级程序设计（第 3 版）</a>的第 15 章，学习了如何使用 canvas，为了巩固知识，写了一个<br>可以世界时钟墙。下面我们一步步用 OOP 的设计方式，来写完这个程序吧。下面先看下演示的效果</p>
 <p><img src="http://oru3ml3h3.bkt.clouddn.com/%E4%B8%96%E7%95%8C%E6%97%B6%E9%92%9F.gif" alt="时钟gif图片"></p>
-<h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><p>首先我们需要用的是 HTML5 的新功能<canvas>元素。可以通过 JavaScript 动态的在这个元素区域绘制图形。<br>使用这个元素必须先设置它的 width 和 height 属性，用于指定绘图的区域大小。<br>想要在这个 canvas 画布上绘图，需要先取得绘图上下文。而取得绘图上下文对象的引用，则需要调用 getContext() 方法并入上下文的名字。这里我们画的平面图，<br>所以传入’2d’，就可以取得 2D 上下文对象。</canvas></p>
+<h3 id="前置知识"><a href="#前置知识" class="headerlink" title="前置知识"></a>前置知识</h3><p>首先我们需要用的是 HTML5 的新功能 <code>&lt;canvas&gt;</code>元素。可以通过 JavaScript 动态的在这个元素区域绘制图形。<br>使用这个元素必须先设置它的 width 和 height 属性，用于指定绘图的区域大小。<br>想要在这个 canvas 画布上绘图，需要先取得绘图上下文。而取得绘图上下文对象的引用，则需要调用 getContext() 方法并入上下文的名字。这里我们画的平面图，<br>所以传入’2d’，就可以取得 2D 上下文对象。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">const drawing = document.getElementById(&apos;drawing&apos;)  //获取 id 是 drawing 的元素</span><br><span class="line"></span><br><span class="line">let context = drawing.getContext(&apos;2d&apos;) // 获取上下文</span><br></pre></td></tr></table></figure>
-<p>2D 上下文对象提供了一些方法，用以绘制简单的 2D 图形，如矩形，弧线，路径等。2D 上下文通过坐标去寻找绘制的起点，这个起点从<canvas>元素的左上角，坐标值为(x = 0, u = 0),所有的坐标基于这个原点计算，x 值越大表示越靠右，y 值越大表示越靠下，反之亦然。</canvas></p>
+<p>2D 上下文对象提供了一些方法，用以绘制简单的 2D 图形，如矩形，弧线，路径等。2D 上下文通过坐标去寻找绘制的起点，这个起点从 <code>&lt;canvas&gt;</code> 元素的左上角，坐标值为(x = 0, u = 0),所有的坐标基于这个原点计算，x 值越大表示越靠右，y 值越大表示越靠下，反之亦然。</p>
 <p>canvas 绘制时常用的填充方式有 2 种 一种是 stroke 开头，表示画轮廓，一种是 fill 开头，表示填充全部内容。比如画一个正方形，stroke 表示设置正方形边框，fill 表示整个正方形的内部。</p>
 <ul>
 <li>颜色设置<ul>
@@ -719,8 +719,6 @@
   
 
 
-  
-
 
 
 
@@ -759,11 +757,6 @@
   
   
     <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
   
 
 
