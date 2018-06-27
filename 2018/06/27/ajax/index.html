@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="英语学习,英语语法," />
+  <meta name="keywords" content="JavaScript," />
 
 
 
@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="前言昨天有朋友在朋友圈问到背单词的几款app的对比，在这简单的列举几款app说下。  墨墨背单词：特色是采用遗忘曲线，也就是艾宾浩斯曲线，大概就是你记忆新知识后的一个遗忘的时间曲线。但部分词汇需要付费。 乐词：英语届大佬新东方出的app，有词根和智能联想，但部分词汇需要付费。 扇贝单词：扇贝的生态比较丰富，除了单词还有扇贝读书，扇贝听力，扇贝练句等等，但也是部分词汇需要付费，且词根等也要付费。 百">
-<meta name="keywords" content="英语学习,英语语法">
+<meta name="description" content="含义Ajax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。主要作用是在不重新加载网页的情况下，对网页某部分进行更新，提高用户体验。 XMLHttpRequest 对象ajax请求通信的核心是 XMLHttpRequest 对象，一个简易的请求分为四步  第一步：创建一个 XMLHttpRe">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习英语语法(二)">
-<meta property="og:url" content="http://cjijava.cn/2018/06/01/Learn grammer-2/index.html">
+<meta property="og:title" content="AJAX的API和实现的原理.md">
+<meta property="og:url" content="http://cjijava.cn/2018/06/27/ajax/index.html">
 <meta property="og:site_name" content="楚江的博客">
-<meta property="og:description" content="前言昨天有朋友在朋友圈问到背单词的几款app的对比，在这简单的列举几款app说下。  墨墨背单词：特色是采用遗忘曲线，也就是艾宾浩斯曲线，大概就是你记忆新知识后的一个遗忘的时间曲线。但部分词汇需要付费。 乐词：英语届大佬新东方出的app，有词根和智能联想，但部分词汇需要付费。 扇贝单词：扇贝的生态比较丰富，除了单词还有扇贝读书，扇贝听力，扇贝练句等等，但也是部分词汇需要付费，且词根等也要付费。 百">
+<meta property="og:description" content="含义Ajax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。主要作用是在不重新加载网页的情况下，对网页某部分进行更新，提高用户体验。 XMLHttpRequest 对象ajax请求通信的核心是 XMLHttpRequest 对象，一个简易的请求分为四步  第一步：创建一个 XMLHttpRe">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-01T09:34:03.076Z">
+<meta property="og:updated_time" content="2018-06-27T04:01:24.122Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习英语语法(二)">
-<meta name="twitter:description" content="前言昨天有朋友在朋友圈问到背单词的几款app的对比，在这简单的列举几款app说下。  墨墨背单词：特色是采用遗忘曲线，也就是艾宾浩斯曲线，大概就是你记忆新知识后的一个遗忘的时间曲线。但部分词汇需要付费。 乐词：英语届大佬新东方出的app，有词根和智能联想，但部分词汇需要付费。 扇贝单词：扇贝的生态比较丰富，除了单词还有扇贝读书，扇贝听力，扇贝练句等等，但也是部分词汇需要付费，且词根等也要付费。 百">
+<meta name="twitter:title" content="AJAX的API和实现的原理.md">
+<meta name="twitter:description" content="含义Ajax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。主要作用是在不重新加载网页的情况下，对网页某部分进行更新，提高用户体验。 XMLHttpRequest 对象ajax请求通信的核心是 XMLHttpRequest 对象，一个简易的请求分为四步  第一步：创建一个 XMLHttpRe">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://cjijava.cn/2018/06/01/Learn grammer-2/"/>
+  <link rel="canonical" href="http://cjijava.cn/2018/06/27/ajax/"/>
 
 
 
 
 
-  <title>学习英语语法(二) | 楚江的博客</title>
+  <title>AJAX的API和实现的原理.md | 楚江的博客</title>
   
 
 
@@ -288,7 +288,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://cjijava.cn/2018/06/01/Learn grammer-2/">
+    <link itemprop="mainEntityOfPage" href="http://cjijava.cn/2018/06/27/ajax/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Slash chu">
@@ -305,7 +305,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">学习英语语法(二)</h2>
+          <h2 class="post-title" itemprop="name headline">AJAX的API和实现的原理.md</h2>
         
 
         <div class="post-meta">
@@ -317,8 +317,8 @@
               
                 <span class="post-meta-item-text">创建于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-01T18:50:00+08:00">
-                2018-06-01
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-27T10:50:00+08:00">
+                2018-06-27
               </time>
             
 
@@ -340,8 +340,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/英语学习/" itemprop="url" rel="index">
-                    <span itemprop="name">英语学习</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -357,7 +357,7 @@
 
           
           
-             <span id="/2018/06/01/Learn grammer-2/" class="leancloud_visitors" data-flag-title="学习英语语法(二)">
+             <span id="/2018/06/27/ajax/" class="leancloud_visitors" data-flag-title="AJAX的API和实现的原理.md">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -388,47 +388,63 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>昨天有朋友在朋友圈问到背单词的几款app的对比，在这简单的列举几款app说下。</p>
+        <h3 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h3><p>Ajax 即“Asynchronous Javascript And XML”（异步 JavaScript 和 XML），是指一种创建交互式网页应用的网页开发技术。主要作用是在不重新加载网页的情况下，对网页某部分进行更新，提高用户体验。</p>
+<h4 id="XMLHttpRequest-对象"><a href="#XMLHttpRequest-对象" class="headerlink" title="XMLHttpRequest 对象"></a>XMLHttpRequest 对象</h4><p>ajax请求通信的核心是 <code>XMLHttpRequest</code> 对象，一个简易的请求分为四步</p>
 <ul>
-<li>墨墨背单词：特色是采用遗忘曲线，也就是艾宾浩斯曲线，大概就是你记忆新知识后的一个遗忘的时间曲线。但部分词汇需要付费。</li>
-<li>乐词：英语届大佬新东方出的app，有词根和智能联想，但部分词汇需要付费。</li>
-<li>扇贝单词：扇贝的生态比较丰富，除了单词还有扇贝读书，扇贝听力，扇贝练句等等，但也是部分词汇需要付费，且词根等也要付费。</li>
-<li>百词斩：采用图片和文字结合的方式背单词，词汇是免费的，但是有一些广告，也无可厚非。这也是我用的比较久的一款app，背完了4级大概3800多个词汇，不过图文结合的方式越到后面越显得效果颇低。</li>
-<li>泸江开心词场：采用闯关模式游戏结合的方式，词汇量还是比比较丰富的，而且支持其他很多语种学习。</li>
-<li>多邻国：和泸江差不多，看着挺萌的，只是复习的时候需要听力，要带耳机比较方便。</li>
+<li>第一步：创建一个 <code>XMLHttpRequest</code> 对象的实例， let xhr = new XMLHttpRequest()</li>
+<li>第二步：调用实例对象的 <code>open()</code> 方法来初始化一个请求，该方法接收3个参数，另外还可以接收第四和第五个参数，别分是用户名和密码但没有使用过，具体可以看MDN文档 ：<ul>
+<li>method：请求使用的HTTP方法，如 ‘GET’,’POST’ 等等，也可以小写</li>
+<li>url：该次请求要访问的URL地址</li>
+<li>async：是否进行异步操作，接收的是一个布尔值</li>
 </ul>
-<p>总的来说，扇贝和墨墨比较喜欢，单纯的背单词，当然也可以都下了，试试哪种方式适合自己。</p>
-<h3 id="宾语从句"><a href="#宾语从句" class="headerlink" title="宾语从句"></a>宾语从句</h3><blockquote>
-<p>语法是语言的组织规律，任何人在使用语言时，不管他是否学过语法，都须合乎语法。另外，总结语法本身的规律也能加深我们对语言的理解，让我们能够真正熟练地运用语言。</p>
-</blockquote>
-<p>上次已经有讲到宾语，宾语是指一个动作（动词）的接受者，常置于动词之后。如 <code>She broke his heart</code> 在这里，his heart 是宾语。也有双宾语的情况，<code>She gave him a surprise</code>，这种有me 和 a surprise两个宾语的句子叫作双宾语从句，而有时候由 <em>一整个句子充当宾语，这个句子就叫作宾语从句。</em></p>
-<p>先看下宾语从句的结构</p>
-<p>主语 + 谓语 + 宾语（陈述语序）</p>
-<p>然后看下例子：</p>
-<p>I will tell you how to learn English.<br>我将要告诉你如何去学习英语。</p>
-<p>I want to know what you’re talking about.<br>我想知道你在说些什么。</p>
-<p>I don’t know when she can come.<br>我不知道她什么时候能来。</p>
-<p>I’m glad that you read my article.<br>我很高兴你阅读我的文章。</p>
-<p>发现规律了嘛？我们之前本来应该放宾语的位置，变成了一个完整的句子，而且中间多了一个词 <code>how, what, when, that</code>。这些我们叫作引导词，用处就是引导从句，其他的还有 <code>why, if, which, whether</code>等等。</p>
-<p>宾语从句分为三类：</p>
+</li>
+<li>第三步：调用实例对象的 <code>send()</code> 方法发送请求，如果 <code>open()</code> 的第三个参数为 <code>true</code>，表示异步请求，则该方法会理解返回。否则，是同步请求，会直到请求的响应完全接受以后，该方法才返回。该方法也接受一个参数，参数为请求发送的数据，一般是POST请求时需要发送，如果不需要发送数据，则必须传入 <code>null</code>，调用该方法后，会立即向服务器派发请求</li>
+<li>第四步：在请求发送后，响应的数据就会自动填充 XMLHttpRequest 实例对象的属性。其中有用的以下几个：<ul>
+<li>responseText：请求返回的文本</li>
+<li>responseXML：如果响应的内容类型是 ‘text/xml’ 或者 ‘application/xml’，这个属性将保存包含着响应数据的 XML DOM 文档</li>
+<li>status：响应的 HTTP 状态，一般状态码是 200 表示成功，304 则代码请求的资源没有被修改，可以使用浏览器缓存的版本，也表示响应是有效的</li>
+<li>statusText：HTTP状态的说明</li>
+</ul>
+</li>
+</ul>
+<p>详细代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">// 创建一个 XMLHttpRequest 对象的实例</span><br><span class="line">let xhr = new XMLHttpRequest()</span><br><span class="line"></span><br><span class="line">// 初始化请求</span><br><span class="line">xhr.open(&apos;GET&apos;, &apos;https://www.easy-mock.com/mock/5aa79ce96701e17a67bde1ee/snailReading/stroies&apos;, false)</span><br><span class="line"></span><br><span class="line">// 发送请求，本次由于没有发送请求</span><br><span class="line">xhr.send(null)</span><br><span class="line"></span><br><span class="line">// 此时 xhr 对象属性已经被自动填充，我们可以效验下响应状态，判断是否成功</span><br><span class="line">if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status === 304) &#123;</span><br><span class="line">    // 表示有效的响应</span><br><span class="line">    console.log(xhr.responseText)</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    // 否则就请求失败,输出错误的状态码和说明</span><br><span class="line">    console.log(`Request was failed: $&#123;xhr.status&#125;, because $&#123;xhr.statusText&#125;.`)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面的代码就完成了一个简单的请求，但这个请求是同步的，即下面的代码必须等待 <code>send()</code> 收到的响应完成后，下面的代码才能继续，所以我们一般选择异步请求。为此，<code>XMLHttpRequest</code> 对象为我们提供了一个 <code>readyState</code> 属性来表示当前的响应阶段：</p>
 <ul>
-<li>动词的宾语从句</li>
-<li>介词的宾语从句</li>
-<li>形容词的宾语从句</li>
+<li>0：未初始化，即还没有调用 <code>open()</code> 方法</li>
+<li>1：启动，已经调用 <code>open()</code> 方法，但还未调用 <code>send()</code> 方法</li>
+<li>2：发送，已经调用 <code>open()</code> 和 <code>send()</code> 方法，但尚未接收到响应</li>
+<li>3：接收，已经接收到部分响应数据</li>
+<li>4：完成，已经接收到全部的响数据</li>
 </ul>
-<h4 id="动词的宾语从句"><a href="#动词的宾语从句" class="headerlink" title="动词的宾语从句"></a>动词的宾语从句</h4><h5 id="及物动词"><a href="#及物动词" class="headerlink" title="及物动词"></a>及物动词</h5><p>大多数的及物动词都可以带宾语从句，引导词使用that，that大部分时候无词义可以省略。<br>这类动词常用的：hate,take,have,see to.</p>
-<p>例子：<br>He told her that I will watch the game tonight.<br>他告诉她今晚要看球赛。</p>
-<h5 id="动词-副词"><a href="#动词-副词" class="headerlink" title="动词+副词"></a>动词+副词</h5><p>副词很多，比如一些 <code>when, how, where, why</code>等。</p>
-<p>例子：<br>He doesn’t know when he will be off duty.<br>他不知道什么时候下班。</p>
-<h5 id="动词短语"><a href="#动词短语" class="headerlink" title="动词短语"></a>动词短语</h5><p>常见的有： make sure(确保), keep in mind(牢记),put down（放下）等等。</p>
-<p>例子：<br>Make sure that your grammar is correct.<br>确保你的语法是正确的。</p>
-<h5 id="加it的"><a href="#加it的" class="headerlink" title="加it的"></a>加it的</h5><p>一些动词后需要加it，如：find,feel,make,believe等，他们后面有宾语补足语的时候，需要用 it 做形式宾语而将 that 宾语从句置后。<br>例子：<br>I think it necessary that we exercise 30 minutes every day.<br>我认为每天有必要运动30分钟。</p>
-<p>还有一些动词带宾语从句时需要在宾语从句前加 it，如：hate,take,owe,have,see to,lend,hand<br>例子：<br>We take it that you will agree with me.<br>我们认为你会同意我们的。</p>
-<h4 id="介词的宾语从句"><a href="#介词的宾语从句" class="headerlink" title="介词的宾语从句"></a>介词的宾语从句</h4><h5 id="一些疑问类的介词"><a href="#一些疑问类的介词" class="headerlink" title="一些疑问类的介词"></a>一些疑问类的介词</h5><p>如：whether, when, how<br>例子：<br>We are talking about how to learn English.<br>我们在讨论如何学习英语。</p>
-<h4 id="that-if引导的宾语从句"><a href="#that-if引导的宾语从句" class="headerlink" title="that,if引导的宾语从句"></a>that,if引导的宾语从句</h4><p>有时候 except,but,besides 三个介词可以见到 that 隐刀的宾语从句。<br>例子：<br>I know nothing about my new neighbor except that he used to work with a company.<br>对于我的新邻居我只知道他曾在一家公司上班，其他一无所知。</p>
-<h4 id="形容词的宾语从句"><a href="#形容词的宾语从句" class="headerlink" title="形容词的宾语从句"></a>形容词的宾语从句</h4><p>一些形容具有动词的含义，所以也可以带一个宾语，常见有的：sure,sorry,glad,please,happy,afraid,surprised<br>例子：<br>I am sure I will pass the exam.<br>我确信我会通过考试。</p>
-<p>He is glad that she could call him back.<br>他很高兴她能回她电话。</p>
-<p>OK。宾语从句的一些基础知识大概就是这样，肯定看完还是有点懵逼的。其实抛开这些名词称谓，你会发现很多句型都是平时经常见到的，我们如果多分析多归类，自然就会养成英语语法的习惯啦。还是那句老话，多看多练多总结，最后一点，一定要坚持。<br>有人会说为什么会做这些无用的东西，其实学习的最好方法，就是教会其他不会的人，在教的过程中你会不停的思考如何让别人也看懂，自己也会不停的复习，效果棒棒哟，一起进步吧。</p>
+<p><code>readyState</code> 属性每次的改变都会触发 <code>readystatechange</code> 事件，那么就简单了，我们可以利用这个事件来监听每次状态变化后的 <code>readyState</code> 值来判断是否响应完成。我们优化下上面的代码，为简约代码假设下面代码的所有 <code>xhr</code> 变量都是一个 <code>XMLHttpRequest</code> 对象的实例，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">// 检查响应数据的是否成功</span><br><span class="line">const _checkResponse = () =&gt; &#123;</span><br><span class="line">    if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status === 304) &#123;</span><br><span class="line">        // 表示有效的响应</span><br><span class="line">        console.log(xhr.responseText)</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        // 否则就请求失败,输出错误的状态码和说明</span><br><span class="line">        console.log(`Request was failed: $&#123;xhr.status&#125;, because $&#123;xhr.statusText&#125;.`)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// xhr 绑定监听事件</span><br><span class="line">xhr.onreadystatechange = () =&gt; &#123;</span><br><span class="line">    switch (xhr.readyState) &#123;</span><br><span class="line">        case 0:</span><br><span class="line">            console.log(&apos;未初始化&apos;)</span><br><span class="line">            break</span><br><span class="line">        case 1:</span><br><span class="line">            console.log(&apos;初始化完成，等待请求....&apos;)</span><br><span class="line">            break</span><br><span class="line">        case 2:</span><br><span class="line">            console.log(&apos;请求已发送，等待响应....&apos;)</span><br><span class="line">            break</span><br><span class="line">        case 3:</span><br><span class="line">            console.log(&apos;开始响应数据，响应完成中....&apos;)</span><br><span class="line">            break</span><br><span class="line">        case 4:</span><br><span class="line">            console.log(&apos;请求完成！开始判断响应数据内容&apos;)</span><br><span class="line">            _checkResponse()</span><br><span class="line">            break</span><br><span class="line">        default:</span><br><span class="line">            break</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 初始化请求</span><br><span class="line">xhr.open(&apos;GET&apos;, &apos;https://www.easy-mock.com/mock/5aa79ce96701e17a67bde1ee/snailReading/stroies&apos;, false)</span><br><span class="line"></span><br><span class="line">// 发送请求，本次由于没有发送请求</span><br><span class="line">xhr.send(null)</span><br></pre></td></tr></table></figure>
+<h5 id="GET-请求"><a href="#GET-请求" class="headerlink" title="GET 请求"></a>GET 请求</h5><p>GET 请求是一种常用的请求类型，用于向服务器查询某些信息。一般将查询字符串参数追加到 URL 的末尾，格式为 <code>url?queryName1=queryValue1&amp;queryName2=queryValue2</code> (?表示查询字符串和url的衔接处，后面每组查询参数的键和值之间用 <code>=</code> 连接，每组查询参数之间用 <code>&amp;</code> 连接，最后一组不需要加 <code>&amp;</code>)，需要注意的是当通过 <code>open()</code> 方法传入 URL末尾的查询字符串必须经过 <code>encodeURIComponent()</code> 进行正确的编码才行。<br>我们可以写一个方法去向现有的 URL 末尾添加查询字符串参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">const _addURLParam = (url, name, value) =&gt; &#123;</span><br><span class="line">    // 查询该url 是否有 ? 没有就添加一个 ?，有的话就添加 &amp;</span><br><span class="line">    url += (url.indexOf(&apos;?&apos;) === -1 ? &apos;?&apos; : &apos;&amp;&apos;)</span><br><span class="line">    // 拼接转码后的查询参数</span><br><span class="line">    url += `$&#123;encodeURIComponent(name)&#125;=$&#123;encodeURIComponent(value)&#125;`</span><br><span class="line">    return url</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 比如我们要传送的请求参数是下面这样</span><br><span class="line">let data = &#123;</span><br><span class="line">    name: &apos;slash&apos;,</span><br><span class="line">    age: 29</span><br><span class="line">&#125;</span><br><span class="line">let url = &apos;www.requestUrl.com&apos;</span><br><span class="line">for (const key in data) &#123;</span><br><span class="line">    url = _addURLParam(url, key, data[key])</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(url)</span><br><span class="line">// &apos;www.requestUrl.com?name=slash&amp;age=29&apos;</span><br><span class="line"></span><br><span class="line">// 然后我们初始化请求和发送数据就行了</span><br><span class="line">xhr.open(&apos;GET&apos;, url, false)</span><br><span class="line">xhr.send(null)</span><br></pre></td></tr></table></figure>
+<h5 id="POST-请求"><a href="#POST-请求" class="headerlink" title="POST 请求"></a>POST 请求</h5><p>POST 请求通常用于向服务器发送应该被保存的数据。POST请求是把数据作为请求主题提交，即作为 <code>send()</code> 方法的参数去提交，请求数据没有单一的样式，但因为直接用对象或者数组时会自动调用 <code>toString()</code> 方法，会返回 [object object]，导致数据没有正确请求。所以需要使用 <code>JSON.stringify()</code> 方法会把数据格式化成JSON格式的字符串。一个POST的请求流程也很简单，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">let url = &apos;www.requestUrl.com&apos;</span><br><span class="line"></span><br><span class="line">let data = &#123;</span><br><span class="line">    name: &apos;slash&apos;,</span><br><span class="line">    age: 29</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">xhr.open(&apos;POST&apos;, url, false)</span><br><span class="line"></span><br><span class="line">xhr.send(JSON.stringify(data))</span><br></pre></td></tr></table></figure>
+<h5 id="封装一个ajax方法"><a href="#封装一个ajax方法" class="headerlink" title="封装一个ajax方法"></a>封装一个ajax方法</h5><p>结合上面讲到的知识点我们可以封装一个简单的 <code>ajax</code> 方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">// 添加 GET请求 格式的 url</span><br><span class="line">const _addURLParam = (url, name, value) =&gt; &#123;</span><br><span class="line">    // 查询该url 是否有 ? 没有就添加一个 ?，有的话就添加 &amp;</span><br><span class="line">    url += (url.indexOf(&apos;?&apos;) === -1 ? &apos;?&apos; : &apos;&amp;&apos;)</span><br><span class="line">    // 拼接转码后的查询参数</span><br><span class="line">    url += `$&#123;encodeURIComponent(name)&#125;=$&#123;encodeURIComponent(value)&#125;`</span><br><span class="line">    return url</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// ajax 请求的方法</span><br><span class="line">const ajax = (opts) =&gt; &#123;</span><br><span class="line">    // 解构传入的opts数据，其中 method 默认为 GET请求，success为成功后的回调，fail为失败后的回调</span><br><span class="line">    let &#123;method = &apos;GET&apos;, url, data, async = false, success, fail&#125; = opts</span><br><span class="line"></span><br><span class="line">    // 实例化 XMLHttpRequest() 对象</span><br><span class="line">    let xhr = new XMLHttpRequest()</span><br><span class="line"></span><br><span class="line">    // 开始监听 xhr 的响应状态</span><br><span class="line">    xhr.onreadystatechange = () =&gt; &#123;</span><br><span class="line">        if (xhr.readyState === 4) &#123;</span><br><span class="line">            if ((xhr.status &gt;= 200 &amp;&amp; xhr.status &lt; 300) || xhr.status === 304) &#123;</span><br><span class="line">                // 响应成功，将返回的数据传给成功的回调函数</span><br><span class="line">                success(xhr.responseText)</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                // 响应失败，将返回的数据传给失败的回调函数</span><br><span class="line">                fail(xhr.status)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // 最后判断是 GET/POST 请求对应不同的初始化请求和请求方式</span><br><span class="line">    if (method.toLowerCase() === &apos;get&apos;) &#123;</span><br><span class="line">        for (const key in data) &#123;</span><br><span class="line">            url = _addURLParam(url, key, data[key])</span><br><span class="line">        &#125;</span><br><span class="line">        data = null</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        data = JSON.stringify(data)</span><br><span class="line">    &#125;</span><br><span class="line">    xhr.open(method, url, async)</span><br><span class="line">    xhr.send(data)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 使用</span><br><span class="line">ajax(&#123;</span><br><span class="line">    url: &apos;https://www.easy-mock.com/mock/5aa79ce96701e17a67bde1ee/snailReading/stroies&apos;,</span><br><span class="line">    method: &apos;get&apos;,</span><br><span class="line">    data: &#123;</span><br><span class="line">        name: &apos;slash&apos;,</span><br><span class="line">        age: 29</span><br><span class="line">    &#125;,</span><br><span class="line">    success (data) &#123;</span><br><span class="line">        console.log(&apos;请求成功数据为：&apos;, data)</span><br><span class="line">    &#125;,</span><br><span class="line">    fail (err) &#123;</span><br><span class="line">        console.log(&apos;糟糕，请求失败啦：&apos;, err)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>上面就是一个简单的 <code>ajax</code> 封装，你还可以添加其他的一些配置参数进去，比如设置 head 请求头等等。</p>
+<h5 id="timeout-超时设定"><a href="#timeout-超时设定" class="headerlink" title="timeout 超时设定"></a>timeout 超时设定</h5><p>如果一个请求长时间无响应会占用资源，我们可以规定如果请求超过一定时间还没有收到响应，做一些处理。使用很简单，分为两步：</p>
+<ul>
+<li>第一步：设置 <code>timeout</code> 属性的时间，单位为毫秒</li>
+<li>第二步：添加 <code>timeout</code> 监听事件。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&apos;get&apos;, &apos;www.request.com&apos;, false)</span><br><span class="line">xhr.timeout = 3000 // 设置为3秒</span><br><span class="line">xhr.ontimeout = () =&gt; &#123;</span><br><span class="line">    // 请求后响应时间超过3秒时触发</span><br><span class="line">    console.log(&apos;请求超时了&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="进度事件"><a href="#进度事件" class="headerlink" title="进度事件"></a>进度事件</h5><p>进度事件包含了很多个，我们主要看下 <code>load</code> 和 <code>progress</code> 事件</p>
+<ul>
+<li>load事件：表示响应完成，相当于简化了 onreadystatechange 中监听 readyStatus === 4 这个步骤</li>
+<li>progress事件：会根据响应的进度去周期性的触发，利用这个特性我们可以写一个响应的进度条。</li>
+</ul>
+<p>load 事件不多写代码了，实际就相当于上面说到的简化代码的一个语法糖。</p>
+<p>progress 事件会接收一个 event 对象。其中有用的属性有:</p>
+<ul>
+<li>lengthComputable：表示进度信息是否可以用的布尔值，即下面2个属性是否可用</li>
+<li>loaded：当前已接收的响应数据字节</li>
+<li>total：根据 Content-Length 响应头部确定的预期字节数</li>
+</ul>
+<p>根据上面的几个属性，我们可以通过监听去写一个加载数据的进度条，代码这里就不写了，大家可以自己尝试些下，原理就是根据 <code>loaded</code> 的值除以 <code>total</code> 能得到当前数据响应进度的百分比，再去给进度条上显示对应的百分比长度。<br>另外需要提醒的是 onprogress 必须放在 open() 和 send() 前面，而且 open() 的 async 参数要设置成 true</p>
 
       
     </div>
@@ -446,9 +462,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/英语学习/" rel="tag"># 英语学习</a>
-          
-            <a href="/tags/英语语法/" rel="tag"># 英语语法</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -461,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/31/Learn grammar-1/" rel="next" title="学习英语语法(一)">
-                <i class="fa fa-chevron-left"></i> 学习英语语法(一)
+              <a href="/2018/06/26/JSON/" rel="next" title="JSON笔记">
+                <i class="fa fa-chevron-left"></i> JSON笔记
               </a>
             
           </div>
@@ -470,10 +484,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/19/面向对象的程序设计/" rel="prev" title="面向对象的程序设计">
-                面向对象的程序设计 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -624,7 +634,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#宾语从句"><span class="nav-number">2.</span> <span class="nav-text">宾语从句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#动词的宾语从句"><span class="nav-number">2.1.</span> <span class="nav-text">动词的宾语从句</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#及物动词"><span class="nav-number">2.1.1.</span> <span class="nav-text">及物动词</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动词-副词"><span class="nav-number">2.1.2.</span> <span class="nav-text">动词+副词</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动词短语"><span class="nav-number">2.1.3.</span> <span class="nav-text">动词短语</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#加it的"><span class="nav-number">2.1.4.</span> <span class="nav-text">加it的</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#介词的宾语从句"><span class="nav-number">2.2.</span> <span class="nav-text">介词的宾语从句</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#一些疑问类的介词"><span class="nav-number">2.2.1.</span> <span class="nav-text">一些疑问类的介词</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#that-if引导的宾语从句"><span class="nav-number">2.3.</span> <span class="nav-text">that,if引导的宾语从句</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#形容词的宾语从句"><span class="nav-number">2.4.</span> <span class="nav-text">形容词的宾语从句</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#含义"><span class="nav-number">1.</span> <span class="nav-text">含义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XMLHttpRequest-对象"><span class="nav-number">1.1.</span> <span class="nav-text">XMLHttpRequest 对象</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#GET-请求"><span class="nav-number">1.1.1.</span> <span class="nav-text">GET 请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#POST-请求"><span class="nav-number">1.1.2.</span> <span class="nav-text">POST 请求</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#封装一个ajax方法"><span class="nav-number">1.1.3.</span> <span class="nav-text">封装一个ajax方法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#timeout-超时设定"><span class="nav-number">1.1.4.</span> <span class="nav-text">timeout 超时设定</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#进度事件"><span class="nav-number">1.1.5.</span> <span class="nav-text">进度事件</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
